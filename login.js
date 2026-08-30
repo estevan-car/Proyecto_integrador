@@ -13,5 +13,11 @@ do {
   if (usuario === usuarioValido && contrasena === contrasenaValida) {
       console.log("Inicio de sesión exitoso")
       break
-  } 
+  } else {
+      console.log(`Usuario o contrasena incorrectos. Intento ${intentos} de ${maxIntentos}.`)
+  }
+} while (intentos < maxIntentos)
+
+if (intentos === maxIntentos && !(usuario === usuarioValido && contrasena === contrasenaValida)) {
+    console.log("Ha excedido el número de intentos. Cuenta bloqueada.")
 }
